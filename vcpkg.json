@@ -1,0 +1,31 @@
+{
+  "name": "aspire",
+  "version-string": "2024.9.10",
+  "port-version": 1,
+  "description": "AS personal integration and rendering engine",
+  "homepage": "https://gitlab.com/asxa86/aspire",
+  "dependencies": [
+    "gtest",
+    "glm",
+    {
+      "host": true,
+      "name": "glslang",
+      "features": [
+        "tools"
+      ]
+    },
+    {
+      "name": "sdl3",
+      "features": [
+        "vulkan"
+      ]
+    },
+    "sdl3-image",
+    "sdl3-ttf",
+    {
+      "host": true,
+      "name": "spirv-cross"
+    },
+    "magic-enum"
+  ]
+}

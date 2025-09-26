@@ -1,0 +1,13 @@
+{
+    "version": 6,
+    "configurePresets": [
+        {
+            "name": "target-wasm32-emscripten",
+            "hidden": true,
+            "cacheVariables": {
+                "VCPKG_TARGET_TRIPLET": "wasm32-emscripten-aspire",
+                "BUILD_SHARED_LIBS": false
+            }
+        }
+    ]
+}

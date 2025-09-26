@@ -11,12 +11,6 @@
 *.gch
 *.pch
 
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
 # Compiled Dynamic libraries
 *.so
 *.dylib
@@ -37,5 +31,21 @@
 *.out
 *.app
 
-# debug information files
-*.dwo
+# VCPKG
+vcpkg/
+
+# Build
+build*
+
+# vscode
+*.user
+.cache
+
+# Android
+avd/
+
+# Emscripten
+emsdk/
+
+# Visual Studio
+.vs/

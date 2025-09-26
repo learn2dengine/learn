@@ -1,0 +1,15 @@
+{
+    "version": 6,
+    "configurePresets": [
+        {
+            "name": "use-emscripten",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "em++",
+                "CMAKE_C_COMPILER": "emcc",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+                "CMAKE_CXX_SCAN_FOR_MODULES": true
+            }
+        }
+    ]
+}
