@@ -1,4 +1,4 @@
-project(aspire-pong)
+project(learn-pong)
 
 project_add_executable(${PROJECT_NAME})
 
