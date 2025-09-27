@@ -22,7 +22,7 @@ jobs:
             preset: x64-windows-msvc-debug
 
     runs-on: ${{ matrix.config.os }}
-    container: ${{ matrix.config.os == 'ubuntu-latest' && 'ubuntu:25.04' || '' }}
+    container: ${{ matrix.config.os == 'ubuntu-latest' && 'ubuntu:25.04' || null }}
 
     env:
       VCPKG_DEFAULT_BINARY_CACHE: ${{ github.workspace }}/.vcpkg_cache
@@ -33,6 +33,7 @@ jobs:
 
     - name: prepare cache directory
       run: mkdir -p $VCPKG_DEFAULT_BINARY_CACHE
+      shell: bash
     
     - name: vcpkg cache
       uses: actions/cache@v4
@@ -61,6 +62,7 @@ jobs:
       if: ${{ matrix.config.os == 'windows-latest' }}
       run: |
         choco install -y cmake ninja
+      shell: bash
 
     - name: install-dependencies
       if: ${{ matrix.config.os == 'ubuntu-latest' }}
@@ -71,6 +73,8 @@ jobs:
 
     - name: Configure
       run: cmake --preset ${{ matrix.config.preset }}
+      shell: bash
 
     - name: Build
       run: cmake --build --preset ${{ matrix.config.preset }}
+      shell: bash
