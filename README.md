@@ -1,7 +1,7 @@
 # Learn2D
 
 <p align="center">
-    <img src="icon.svg" alt="Learn2D Engine Icon" width="256" height="256">
+    <img src="icon.png" alt="Learn2D Engine Icon" width="256" height="256">
 </p>
 
 ## 2D cross-platform game engine
