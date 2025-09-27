@@ -31,11 +31,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: prepare cache directory
+    - name: vcpkg-cache-directory
       run: mkdir -p $VCPKG_DEFAULT_BINARY_CACHE
       shell: bash
     
-    - name: vcpkg cache
+    - name: vcpkg-cache-restore
       uses: actions/cache@v4
       with:
         path: ${{ env.VCPKG_DEFAULT_BINARY_CACHE }}
@@ -64,17 +64,23 @@ jobs:
         choco install -y cmake ninja
       shell: bash
 
-    - name: install-dependencies
+    - name: install-dependencies-linux
       if: ${{ matrix.config.os == 'ubuntu-latest' }}
       run: |
         apt install -y '^libxcb.*-dev' libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxfixes-dev libgl1-mesa-dev libglu1-mesa-dev libegl1-mesa-dev
         apt install -y libxrender-dev libxi-dev libxcb1-dev libxcb-glx0-dev libxcb-keysyms1-dev libxcb-image0-dev libxcb-shm0-dev libx11-xcb-dev libxkbcommon-dev
         apt install -y libxkbcommon-x11-dev libxcb-icccm4-dev libxcb-sync0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-render-util0-dev libxinerama-dev
 
-    - name: Configure
+    - name: setup-msvc
+      if: ${{ matrix.config.os == 'windows-latest' }}
+      uses: microsoft/setup-msbuild@v1
+      with:
+        vs-version: '2022'
+
+    - name: cmake-configure
       run: cmake --preset ${{ matrix.config.preset }}
       shell: bash
 
-    - name: Build
+    - name: cmake-build
       run: cmake --build --preset ${{ matrix.config.preset }}
       shell: bash
