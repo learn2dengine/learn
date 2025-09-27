@@ -14,7 +14,8 @@ jobs:
 
     env:
       VCPKG_DEFAULT_BIBARY_CACHE: ${{ github.workspace }}/.vcpkg_cache
-
+      VCPKG_BINARY_SOURCES: "default"
+      
     steps:
     - uses: actions/checkout@v4
 
