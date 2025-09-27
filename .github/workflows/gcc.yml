@@ -8,7 +8,9 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-25.04
+    runs-on: ubuntu-latest
+    container:
+      image: ununtu:25.04
 
     steps:
     - uses: actions/checkout@v4
