@@ -47,6 +47,7 @@ jobs:
       if: ${{ matrix.config.os == 'ubuntu-latest' }}
       run: |
           apt update -y
+          apt upgrade -y
           apt install -y curl tar git zip unzip make autoconf libtool python3-jinja2 ninja-build
           apt install -y g++-15 clang-20 cmake
           update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-15 10
@@ -73,9 +74,9 @@ jobs:
 
     - name: setup-msvc
       if: ${{ matrix.config.os == 'windows-latest' }}
-      uses: microsoft/setup-msbuild@v1
+      uses: ilammy/msvc-dev-cmd@v1
       with:
-        vs-version: '2022'
+        arch: amd64
 
     - name: cmake-configure
       run: cmake --preset ${{ matrix.config.preset }}
