@@ -1,12 +1,6 @@
 cmake_minimum_required(VERSION 3.27)
 
-include(GenerateExportHeader)
-include(CMakePackageConfigHelpers)
-include(GNUInstallDirs)
 include(FetchContent)
-include(cmake/project_compile_options.cmake)
-include(cmake/project_add_library.cmake)
-include(cmake/project_add_executable.cmake)
 
 # Acquire VCPKG
 FetchContent_Declare(
@@ -18,6 +12,13 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(vcpkg)
 
 project(aspire LANGUAGES CXX)
+
+include(GenerateExportHeader)
+include(CMakePackageConfigHelpers)
+include(GNUInstallDirs)
+include(cmake/project_compile_options.cmake)
+include(cmake/project_add_library.cmake)
+include(cmake/project_add_executable.cmake)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
