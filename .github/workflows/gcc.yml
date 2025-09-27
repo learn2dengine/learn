@@ -1,0 +1,38 @@
+name: gcc
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: install-tools
+      run: |
+        apt update -y
+        apt install -y curl tar git zip unzip make autoconf libtool python3-jinja2 ninja-build
+        apt install -y g++-15 mono-complete
+        update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-15 10
+        update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-15 10
+        update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 20
+        update-alternatives --set cc /usr/bin/gcc
+        update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 20
+        update-alternatives --set c++ /usr/bin/g++
+    
+    - name: install-dependencies
+      run: |
+        apt install -y '^libxcb.*-dev' libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxfixes-dev libgl1-mesa-dev libglu1-mesa-dev libegl1-mesa-dev
+        apt install -y libxrender-dev libxi-dev libxcb1-dev libxcb-glx0-dev libxcb-keysyms1-dev libxcb-image0-dev libxcb-shm0-dev libx11-xcb-dev libxkbcommon-dev
+        apt install -y libxkbcommon-x11-dev libxcb-icccm4-dev libxcb-sync0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-render-util0-dev libxinerama-dev
+
+    - name: Configure
+      run: cmake --preset x64-linux-gcc-debug
+
+    - name: Build
+      run: cmake --build --preset x64-linux-gcc-debug
