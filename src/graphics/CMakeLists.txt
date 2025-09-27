@@ -57,8 +57,8 @@ foreach(SHADER ${GLSL_SHADERS})
         add_custom_command(
             OUTPUT ${MSL_FILE}
             COMMAND ${SPIRV_CROSS} ${SPIRV_BINARY} --msl --output ${MSL_FILE}
-            DEPENDS ${SHADER}
-            COMMENT "Compiling SPIRV shader ${SPIRV_BINARY} to MSL"
+            DEPENDS ${SPIRV_BINARY}
+            COMMENT "Compiling SPIR-V shader ${SPIRV_BINARY} to MSL"
             VERBATIM
         )
 
