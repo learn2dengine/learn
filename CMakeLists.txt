@@ -1,16 +1,25 @@
 cmake_minimum_required(VERSION 3.27)
 
-project(aspire LANGUAGES C CXX)
-
-enable_language(CXX)
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-
 include(GenerateExportHeader)
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
+include(FetchContent)
 include(cmake/project_compile_options.cmake)
 include(cmake/project_add_library.cmake)
 include(cmake/project_add_executable.cmake)
+
+# Acquire VCPKG
+FetchContent_Declare(
+    vcpkg
+    GIT_REPOSITORY https://github.com/microsoft/vcpkg.git
+    GIT_TAG 2025.09.17
+)
+
+FetchContent_MakeAvailable(vcpkg)
+
+project(aspire LANGUAGES CXX)
+
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
 set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/installed)
@@ -27,14 +36,6 @@ include_directories(${PROJECT_INCLUDE_DIR})
 
 # Define build directory includes as system to avoid tools like clang-tidy from scanning them.
 include_directories(SYSTEM ${CMAKE_CURRENT_BINARY_DIR}/include)
-
-if("${VCPKG_TARGET_TRIPLET}" STREQUAL "wasm32-emscripten-aspire")
-    set(CMAKE_SKIP_RPATH ON)
-    set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
-    set(CMAKE_EXECUTABLE_SUFFIX ".html")
-endif()
-
-set(CMAKE_OSX_SYSROOT "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk" CACHE STRING "MacOS SDK Path" FORCE)
 
 add_subdirectory(app)
 add_subdirectory(src)

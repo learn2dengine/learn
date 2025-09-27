@@ -6,7 +6,8 @@
             "hidden": true,
             "cacheVariables": {
                 "VCPKG_TARGET_TRIPLET": "arm64-osx-aspire",
-                "BUILD_SHARED_LIBS": false
+                "BUILD_SHARED_LIBS": false,
+                "CMAKE_OSX_SYSROOT": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
             }
         }
     ]
