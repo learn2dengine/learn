@@ -1,4 +1,4 @@
-project(aspire-core-test)
+project(druid-core-test)
 
 project_add_executable(${PROJECT_NAME})
 
@@ -11,8 +11,8 @@ enable_testing()
 find_package(GTest CONFIG REQUIRED)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
-    aspire-core
+    druid-core
     GTest::gtest_main
 )
 
-add_test(aspire-test ${PROJECT_NAME})
+add_test(druid-test ${PROJECT_NAME})

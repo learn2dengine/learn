@@ -6,7 +6,7 @@
             "hidden": true,
             "cacheVariables": {
                 "VCPKG_CHAINLOAD_TOOLCHAIN_FILE": "${sourceDir}/vcpkg/scripts/toolchains/android.cmake",
-                "VCPKG_TARGET_TRIPLET": "x64-android-aspire",
+                "VCPKG_TARGET_TRIPLET": "x64-android-druid",
                 "VCPKG_INSTALL_OPTIONS": "--allow-unsupported",
                 "ANDROID_STL": "c++_shared",
                 "ANDROID_SDK_ROOT": "$env{ANDROID_HOME}",

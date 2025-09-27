@@ -11,14 +11,14 @@
 #include <iostream>
 #include <thread>
 
-import aspire.core.file;
-import aspire.graphics.color;
-import aspire.graphics.vertex;
-import aspire.graphics.window;
-import aspire.graphics.event;
+import druid.core.file;
+import druid.graphics.color;
+import druid.graphics.vertex;
+import druid.graphics.window;
+import druid.graphics.event;
 
-using aspire::graphics::Color;
-using aspire::graphics::Vertex;
+using druid::graphics::Color;
+using druid::graphics::Vertex;
 
 struct Profile
 {
@@ -112,7 +112,7 @@ auto draw(SDL_Window* window, SDL_GPUDevice* device, SDL_GPUGraphicsPipeline* pi
 	}
 
 	SDL_GPUColorTargetInfo color{};
-	color.clear_color = SDL_FColor{.r = Color::Aspire.redF(), .g = Color::Aspire.greenF(), .b = Color::Aspire.blueF(), .a = Color::Aspire.alphaF()};
+	color.clear_color = SDL_FColor{.r = Color::druid.redF(), .g = Color::druid.greenF(), .b = Color::druid.blueF(), .a = Color::druid.alphaF()};
 	color.load_op = SDL_GPU_LOADOP_CLEAR;
 	color.store_op = SDL_GPU_STOREOP_STORE;
 	color.texture = swapchain;
@@ -156,14 +156,14 @@ auto draw(SDL_Window* window, SDL_GPUDevice* device, SDL_GPUGraphicsPipeline* pi
 auto main() -> int
 try
 {
-	aspire::graphics::Window window{};
+	druid::graphics::Window window{};
 
 	window.onEvent(
-		[&window](const aspire::graphics::EventWindow& e)
+		[&window](const druid::graphics::EventWindow& e)
 		{
 			switch(e.type)
 			{
-				case aspire::graphics::EventWindow::Type::Close_requested:
+				case druid::graphics::EventWindow::Type::Close_requested:
 					window.close();
 					break;
 				default:

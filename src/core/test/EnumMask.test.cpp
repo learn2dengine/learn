@@ -1,4 +1,4 @@
-#include <aspire/core/EnumMask.h>
+#include <druid/core/EnumMask.h>
 #include <gtest/gtest.h>
 
 namespace
@@ -13,7 +13,7 @@ namespace
 
 TEST(EnumMask, constructor)
 {
-	aspire::core::EnumMask<TestEnum> test{TestEnum::One, TestEnum::Two, TestEnum::Three};
+	druid::core::EnumMask<TestEnum> test{TestEnum::One, TestEnum::Two, TestEnum::Three};
 	EXPECT_TRUE(test.test(TestEnum::One));
 	EXPECT_TRUE(test.test(TestEnum::Two));
 	EXPECT_TRUE(test.test(TestEnum::Three));
@@ -21,7 +21,7 @@ TEST(EnumMask, constructor)
 
 TEST(EnumMask, set)
 {
-	aspire::core::EnumMask<TestEnum> test{};
+	druid::core::EnumMask<TestEnum> test{};
 	test.set(TestEnum::One);
 	EXPECT_TRUE(test.test(TestEnum::One));
 	EXPECT_FALSE(test.test(TestEnum::Two));
@@ -40,7 +40,7 @@ TEST(EnumMask, set)
 
 TEST(EnumMask, remove)
 {
-	aspire::core::EnumMask<TestEnum> test{};
+	druid::core::EnumMask<TestEnum> test{};
 	test.set(TestEnum::One);
 	test.set(TestEnum::Two);
 	test.set(TestEnum::Three);
@@ -58,7 +58,7 @@ TEST(EnumMask, remove)
 
 TEST(EnumMask, flip)
 {
-	aspire::core::EnumMask<TestEnum> test{};
+	druid::core::EnumMask<TestEnum> test{};
 	EXPECT_FALSE(test.test(TestEnum::One));
 
 	test.flip(TestEnum::One);
@@ -70,7 +70,7 @@ TEST(EnumMask, flip)
 
 TEST(EnumMask, clear)
 {
-	aspire::core::EnumMask<TestEnum> test{};
+	druid::core::EnumMask<TestEnum> test{};
 	test.set(TestEnum::One);
 	test.set(TestEnum::Two);
 	test.set(TestEnum::Three);

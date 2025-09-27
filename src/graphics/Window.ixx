@@ -7,14 +7,14 @@ module;
 #include <functional>
 #include <string>
 
-export module aspire.graphics.window;
+export module druid.graphics.window;
 
-import aspire.core.enummask;
-import aspire.graphics.event;
-import aspire.graphics.renderer;
-import aspire.graphics.pipeline;
+import druid.core.enummask;
+import druid.graphics.event;
+import druid.graphics.renderer;
+import druid.graphics.pipeline;
 
-namespace aspire::graphics
+namespace druid::graphics
 {
 	export class Window
 	{
@@ -54,17 +54,17 @@ namespace aspire::graphics
 			static constexpr int DefaultHeight{720U};
 
 #if _WIN32 || __linux__ || __ANDROID__
-			static constexpr aspire::core::EnumMask<Flag> DefaultFlags{Flag::Resizable, Flag::Vulkan};
+			static constexpr druid::core::EnumMask<Flag> DefaultFlags{Flag::Resizable, Flag::Vulkan};
 #elif __APPLE__
-			static constexpr aspire::core::EnumMask<Flag> DefaultFlags{Flag::Resizable, Flag::Metal};
+			static constexpr druid::core::EnumMask<Flag> DefaultFlags{Flag::Resizable, Flag::Metal};
 #elif __EMSCRIPTEN__
-			static constexpr aspire::core::EnumMask<Flag> DefaultFlags{Flag::Resizable, Flag::OpenGL};
+			static constexpr druid::core::EnumMask<Flag> DefaultFlags{Flag::Resizable, Flag::OpenGL};
 #endif
 
 			std::string title;
 			int width{Traits::DefaultWidth};
 			int height{Traits::DefaultHeight};
-			aspire::core::EnumMask<Flag> flags{DefaultFlags};
+			druid::core::EnumMask<Flag> flags{DefaultFlags};
 		};
 
 		Window() : initialized{SDL_Init(SDL_INIT_VIDEO)}

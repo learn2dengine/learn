@@ -5,9 +5,9 @@ module;
 #include <fstream>
 #include <vector>
 
-export module aspire.core.file;
+export module druid.core.file;
 
-namespace aspire::core
+namespace druid::core
 {
 	export auto ReadFile(const std::filesystem::path& x) -> std::vector<std::byte>
 	{

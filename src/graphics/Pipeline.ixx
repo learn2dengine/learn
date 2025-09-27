@@ -4,12 +4,12 @@ module;
 #include <array>
 #include <filesystem>
 
-export module aspire.graphics.pipeline;
+export module druid.graphics.pipeline;
 
-import aspire.core.file;
-import aspire.graphics.vertex;
+import druid.core.file;
+import druid.graphics.vertex;
 
-namespace aspire::graphics
+namespace druid::graphics
 {
 	export class Pipeline
 	{
@@ -93,7 +93,7 @@ namespace aspire::graphics
 	private:
 		auto loadShader(const std::filesystem::path& x, bool vertex) -> SDL_GPUShader*
 		{
-			const auto spv = aspire::core::ReadFile(x);
+			const auto spv = druid::core::ReadFile(x);
 
 			if(std::empty(spv) == true)
 			{

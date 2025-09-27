@@ -5,7 +5,7 @@
             "name": "target-arm64-windows",
             "hidden": true,
             "cacheVariables": {
-                "VCPKG_TARGET_TRIPLET": "arm64-windows-aspire"
+                "VCPKG_TARGET_TRIPLET": "arm64-windows-druid"
             }
         }
     ]

@@ -176,7 +176,7 @@ Other approaches you've thought about
   - Classes: `PascalCase` (e.g., `GraphicsWindow`)
   - Functions/Variables: `camelCase` (e.g., `createWindow()`)
   - Constants: `UPPER_SNAKE_CASE` (e.g., `MAX_BUFFER_SIZE`)
-  - Namespaces: `lowercase` (e.g., `aspire::graphics`)
+  - Namespaces: `lowercase` (e.g., `druid::graphics`)
 
 ### Code Style
 
@@ -189,7 +189,7 @@ Other approaches you've thought about
 ### Example Code Style
 
 ```cpp
-namespace aspire::graphics
+namespace druid::graphics
 {
     /// @brief Represents a graphics window
     class Window

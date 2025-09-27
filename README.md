@@ -1,12 +1,12 @@
-# Learn2D
+# Druid
 
 <p align="center">
-    <img src="icon.png" alt="Learn2D Engine Icon" width="256" height="256">
+    <img src="logo.png" alt="Druid Engine Logo" width="384" height="256">
 </p>
 
 ## 2D cross-platform game engine
 
-[Learn2D](https://learn2d.org) is a 2D game engine written in modern C++ to explore contemporary C++ features and graphics programming techniques. Built with performance and educational value in mind, it demonstrates the use of C++20 modules, cross-platform development, and an opportunity to **learn**.
+[Druid](https://druidengine.org) is a 2D game engine written in modern C++ to explore contemporary C++ features and graphics programming techniques. Built with performance and educational value in mind, it demonstrates the use of C++20 modules, cross-platform development, and an opportunity to learn.
 
 ## Features
 
@@ -38,30 +38,29 @@ This project uses CMake with presets for easy configuration and building across 
 
 1. Clone the repository:
    ```powershell
-   git clone https://github.com/learn2dengine/learn
-   cd learn
+   git clone https://github.com/druidengine/druid
+   cd druid
    ```
 
 2. Configure the project using a preset:
    ```powershell
-   cmake --preset debug-x64-windows-msvc
+   cmake --preset x64-windows-msvc-debug
    ```
 
 3. Build the project:
    ```powershell
-   cmake --build --preset debug-x64-windows-msvc
+   cmake --build --preset x64-windows-msvc-debug
    ```
 
 4. Run the Pong example:
    ```powershell
-   .\build\app\pong\learn-pong.exe
+   .\build\app\pong\druid-pong.exe
    ```
 
 #### Alternative Presets for Windows
 
-- **Release build**: `release-x64-windows-msvc`
-- **Clang compiler**: `debug-x64-windows-clang`
-- **ARM64 architecture**: `debug-arm64-windows-msvc`
+- **Release build**: `x64-windows-msvc-release`
+- **ARM64 architecture**: `arm64-windows-msvc-debug`
 
 ### Linux
 
@@ -69,8 +68,8 @@ This project uses CMake with presets for easy configuration and building across 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/learn2dengine/learn
-   cd learn
+   git clone https://github.com/druidengine/druid
+   cd druid
    ```
 
 2. Install dependencies (Ubuntu/Debian):
@@ -81,24 +80,24 @@ This project uses CMake with presets for easy configuration and building across 
 
 3. Configure the project:
    ```bash
-   cmake --preset debug-x64-linux-gcc
+   cmake --preset x64-linux-gcc-debug
    ```
 
 4. Build the project:
    ```bash
-   cmake --build --preset debug-x64-linux-gcc
+   cmake --build --preset x64-linux-gcc-debug
    ```
 
 5. Run the Pong example:
    ```bash
-   ./build/app/pong/learn-pong
+   ./build/app/pong/druid-pong
    ```
 
 #### Alternative Presets for Linux
 
-- **Release build**: `release-x64-linux-gcc`
-- **Clang compiler**: `debug-x64-linux-clang`
-- **ARM64 architecture**: `debug-arm64-linux-gcc`
+- **Release build**: `x64-linux-gcc-release`
+- **Clang compiler**: `x64-linux-clang-debug`
+- **ARM64 architecture**: `arm64-linux-gcc-debug`
 
 ### Available CMake Presets
 
@@ -129,7 +128,7 @@ The project uses vcpkg for dependency management and CMake presets for configura
 
 ## Contributing
 
-This is primarily an educational project for exploring modern C++ and graphics programming concepts. Contributions and suggestions are welcome for learning purposes.
+This is primarily an educational project for exploring modern C++ and graphics programming concepts. Contributions and suggestions are welcome.
 
 ## License
 

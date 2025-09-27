@@ -10,7 +10,7 @@
                 "rhs": "Linux"
             },
             "cacheVariables": {
-                "VCPKG_HOST_TRIPLET": "arm64-linux-aspire"
+                "VCPKG_HOST_TRIPLET": "arm64-linux-druid"
             }
         }
     ]

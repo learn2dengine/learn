@@ -1,10 +1,10 @@
-export module aspire.graphics.vertex;
+export module druid.graphics.vertex;
 
-import aspire.graphics.color;
+import druid.graphics.color;
 
-using aspire::graphics::RgbaF;
+using druid::graphics::RgbaF;
 
-export namespace aspire::graphics
+export namespace druid::graphics
 {
 	struct Vec2i
 	{

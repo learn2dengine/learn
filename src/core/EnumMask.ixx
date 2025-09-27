@@ -3,11 +3,11 @@ module;
 #include <initializer_list>
 #include <type_traits>
 
-export module aspire.core.enummask;
+export module druid.core.enummask;
 
-import aspire.core.concepts;
+import druid.core.concepts;
 
-export namespace aspire::core
+export namespace druid::core
 {
 	template <TypeEnum T>
 	class EnumMask

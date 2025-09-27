@@ -11,7 +11,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(vcpkg)
 
-project(aspire LANGUAGES CXX)
+project(druid LANGUAGES CXX)
 
 include(GenerateExportHeader)
 include(CMakePackageConfigHelpers)

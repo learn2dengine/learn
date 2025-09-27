@@ -2,9 +2,9 @@ module;
 
 #include <type_traits>
 
-export module aspire.core.concepts;
+export module druid.core.concepts;
 
-export namespace aspire::core
+export namespace druid::core
 {
 	template <typename T>
 	concept TypeEnum = std::is_enum_v<T>;

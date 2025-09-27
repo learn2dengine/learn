@@ -4,9 +4,9 @@ module;
 #include <filesystem>
 #include <string_view>
 
-export module aspire.graphics.renderer;
+export module druid.graphics.renderer;
 
-import aspire.graphics.pipeline;
+import druid.graphics.pipeline;
 
 #if _WIN32 || __linux__ || __ANDROID__
 constexpr auto ShaderFormat = SDL_GPUShaderFormat{SDL_GPU_SHADERFORMAT_SPIRV};
@@ -20,7 +20,7 @@ constexpr auto ShaderExt = ".msl";
 #else
 #endif
 
-namespace aspire::graphics
+namespace druid::graphics
 {
 	auto ShaderExtension(std::string_view x) -> std::filesystem::path
 	{

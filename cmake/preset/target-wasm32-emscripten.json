@@ -5,7 +5,7 @@
             "name": "target-wasm32-emscripten",
             "hidden": true,
             "cacheVariables": {
-                "VCPKG_TARGET_TRIPLET": "wasm32-emscripten-aspire",
+                "VCPKG_TARGET_TRIPLET": "wasm32-emscripten-druid",
                 "BUILD_SHARED_LIBS": false,
                 "CMAKE_SKIP_RPATH": true,
                 "CMAKE_BUILD_WITH_INSTALL_RPATH": true,

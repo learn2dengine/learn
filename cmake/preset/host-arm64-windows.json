@@ -10,7 +10,7 @@
                 "rhs": "Windows"
             },
             "cacheVariables": {
-                "VCPKG_HOST_TRIPLET": "arm64-windows-aspire"
+                "VCPKG_HOST_TRIPLET": "arm64-windows-druid"
             }
         }
     ]

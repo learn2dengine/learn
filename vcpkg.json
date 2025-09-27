@@ -1,9 +1,9 @@
 {
-  "name": "aspire",
-  "version-string": "2024.9.10",
+  "name": "druid",
+  "version-string": "2025.9.27",
   "port-version": 1,
-  "description": "AS personal integration and rendering engine",
-  "homepage": "https://gitlab.com/asxa86/aspire",
+  "description": "A modern C++ game engine for creation and exploration.",
+  "homepage": "https://github.com/druidengine/druid",
   "dependencies": [
     "gtest",
     "glm",

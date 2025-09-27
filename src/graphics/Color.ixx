@@ -3,9 +3,9 @@ module;
 #include <cstdint>
 #include <limits>
 
-export module aspire.graphics.color;
+export module druid.graphics.color;
 
-namespace aspire::graphics
+namespace druid::graphics
 {
 	export struct Rgba
 	{
@@ -30,7 +30,7 @@ namespace aspire::graphics
 	export class Color
 	{
 	public:
-		static const Color Aspire;
+		static const Color druid;
 		static const Color Red;
 		static const Color Green;
 		static const Color Blue;
@@ -93,7 +93,7 @@ namespace aspire::graphics
 		Rgba rgba{};
 	};
 
-	constexpr Color Color::Aspire{{.r = 53, .g = 39, .b = 39}};
+	constexpr Color Color::druid{{.r = 53, .g = 39, .b = 39}};
 	constexpr Color Color::Red{{.r = Rgba::Max}};
 	constexpr Color Color::Green{{.g = Rgba::Max}};
 	constexpr Color Color::Blue{{.b = Rgba::Max}};

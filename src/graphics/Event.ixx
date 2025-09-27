@@ -4,9 +4,9 @@ module;
 #include <chrono>
 #include <variant>
 
-export module aspire.graphics.event;
+export module druid.graphics.event;
 
-namespace aspire::graphics
+namespace druid::graphics
 {
 	export struct EventWindow
 	{

@@ -1,4 +1,4 @@
-project(aspire-graphics)
+project(druid-graphics)
 
 project_add_library(${PROJECT_NAME})
 
@@ -20,7 +20,7 @@ target_sources(${PROJECT_NAME} PUBLIC
 find_package(SDL3 CONFIG REQUIRED)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
-    aspire-core
+    druid-core
     SDL3::SDL3
 )
 
